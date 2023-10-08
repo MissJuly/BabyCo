@@ -15,12 +15,10 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet">
     <title>Babyco | For everything baby</title>
   </head>
   <body>
@@ -80,50 +78,107 @@
         <section>
       </div>
 
-      <div class="category_section-main mt-4 p-3">
+      <div class="category_section-main mt-4 px-5">
         <section class="shop-by-categories row">
         <div class="col-md-3">
-          <h3>Shop <br>by categories</h3>
-          <div class="d-flex">
+          <h3>Shop <br><span class="pb-3">by</span> categories</h3>
+          <div class="d-flex pt-5 gap-3">
             <iconify-icon icon="icon-park-outline:pacifier"></iconify-icon>
             <p class="">200+ <br>Unique products</p>
           </div>
-          <a href="#shop" class="">ALL CATEGORIES +</a>
+          <a href="#shop" class="all-btn pt-5">ALL CATEGORIES +</a>
         </div>
         <div class="categories col-md-9">
             <div class="row">
-              <div class="category col-md-2 position-relative">
-                <a href="" class=""><img class="img-fluid" src="../static/images/c-01.jpg" alt="Boys">
-                  <div class="card-img-overlay position-absolute">
-                    <h4 class="text-white">Boys</h4>
+              <a href="#shop" class="col-md-3">
+                <div class="category  position-relative" style="background-image: url(../static/images/c-01.jpg); background-size: cover; background-position: center; ">
+                    <!-- <div class="image-container"  > -->
+                    <!-- <img class="" src="" alt="Boys"> -->
+                      <div class="category_overlay">
+                        <h4 class="p-3 text-white">Boys</h4>
+                      </div>
+                    <!-- </div> -->
                   </div>
+              </a>
+              <a href="#shop" class="col-md-3">
+              <div class="category  position-relative" style="background-image: url(../static/images/c-02.jpg); background-size: cover; background-position: center; ">
+                  <!-- <div class="image-container position-relative"> -->
+                    <!-- <img class="w-100" src="../static/images/c-02.jpg" alt="Girls"> -->
+                    <div class="category_overlay">
+                      <h4 class="p-3 text-white">Girls</h4>
+                    </div>
+                  <!-- </div> -->
+                </div>
+              </a>
+              <a href="#shop" class="col-md-3">
+                <div class="category  position-relative" style="background-image: url(../static/images/c-03.jpg); background-size: cover; background-position: center; ">
+                  <!-- <div class="image-container position-relative"> -->
+                    <!-- <img class="w-100" src="../static/images/c-03.jpg" alt="Accessories"> -->
+                    <div class="category_overlay">
+                      <h4 class="p-3 text-white">Accessories</h4>
+                    </div>
+                  <!-- </div> -->
+                </div>
                 </a>
-              </div>
-              <div class="category col-md-2 position-relative">
-                <a href="" class=""><img class="img-fluid" src="../static/images/c-02.jpg" alt="Girls">
-                  <div class="card-img-overlay position-absolute">
-                    <h4 class="text-white">Girls</h4>
+                <a href="#shop" class="col-md-3">
+              <div class="category position-relative" style="background-image: url(../static/images/c-04.jpg); background-size: cover; background-position: center; ">
+                  <!-- <div class="image-container position-relative"> -->
+                    <!-- <img class="w-100" src="../static/images/c-04.jpg" alt="Toys"> -->
+                    <div class="category_overlay">
+                      <h4 class="p-3 text-white">Toys</h4>
+                    </div>
+                  <!-- </div> -->
+                </div>
+                </a>
+            </div>
+        </div>
+        <div class="order_deals mt-3">
+          <div class="row" style="min-height: 65vh;">
+            <div class="col-md-6">
+              <div class="d-flex justify-content-center"  style="background-image: url(../static/images/c-05.jpg); background-size: cover; background-position: center; height: 100%;">
+
+                <div class="order_deals-border">
+                  <div class="clothes_deco ">
+                    <p>20% OFF ALL ORDERS</p>
+                    <h4 class="pb-3">Clothes and Apparel</h4>
+                    <a href="#shop" class="cta">Shop now</a>
                   </div>
-                </a>
-              </div>
-              <div class="category col-md-2 position-relative">
-                <a href="" class=""><img class="img-fluid" src="../static/images/c-03.jpg" alt="Accessories">
-                  <div class="card-img-overlay position-absolute">
-                    <h4 class="text-white">Accessories</h4>
-                  </div>
-                </a>
-              </div>
-              <div class="category col-md-2 position-relative">
-                <a href="" class=""><img class="img-fluid" src="../static/images/c-04.jpg" alt="Toys">
-                  <div class="card-img-overlay position-absolute">
-                    <h4 class="text-white">Toys</h4>
-                  </div>
-                </a>
+                </div>
               </div>
             </div>
+            <div class="col-md-6" >
+              <div class="d-flex justify-content-center" style="background-image: url(../static/images/c-06.jpg); background-size: cover; background-position: center; height: 100%;">
+                <div class="order_deals-border">
+                  <div class="clothes_deco ">
+                    <p>20% OFF ALL ORDERS</p>
+                    <h4 class="pb-3">Nursery and Deco</h4>
+                    <a href="#shop" class="cta ">Shop now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         </section>
       </div>
+      <section class="products_section" style="min-height: 100vh;">
+        <div class="">
+          <h3>Hot Products</h3>
+          <h4>LATEST PRODUCTS</h4>
+          <h5>BEST SELLERS</h5>
+        </div>
+        <div class="hot_products">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="" style=""></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <section id="vibes" class="vibes_section" style="background: url('../static/images/baby-room.jpg'); background-size: cover; background-position: center;">
+      <p class="vibes_section-text"><span>Good</span> <br> <span>Vibes</span><br> <span>Only!</span></p>
+      </section>
     </main>
 
     <!-- JavaScript libraries -->
