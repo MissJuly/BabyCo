@@ -2,6 +2,10 @@
   margin-right: 0 !important;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 :root {
   --baby-pink: #d7c0d0;
   --baby-blue: #b1e5f2;
@@ -13,6 +17,10 @@
 
 * {
   scroll-behavior: smooth;
+}
+
+html {
+  font-size: 16px; /* Base font size*/
 }
 
 .hero-section {
@@ -45,24 +53,24 @@
 
 .hero-welcome-text h2 {
   color: var(--baby-font);
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 900;
 }
 
 .hero-welcome-text p {
   color: var(--baby-font);
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 400;
 }
 .hero-welcome-text p {
   color: var(--baby-font);
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 400;
 }
 
 .hero-welcome-text .cta {
   color: var(--baby-font);
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 600;
   text-decoration: none;
   background-color: var(--baby-pink);
@@ -81,26 +89,27 @@
 
 .shop-by-categories h3 {
   color: var(--baby-font) !important;
-  font-size: 36px !important;
+  font-size: 2.25rem !important;
   font-weight: 600 !important;
 }
 
 .shop-by-categories iconify-icon {
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 .shop-by-categories h3 span {
   border-bottom: 7px solid var(--baby-pink);
 }
+
 .shop-by-categories p {
   color: var(--baby-font) !important;
-  font-size: 20px !important;
+  font-size: 1.25rem !important;
   font-weight: 400 !important;
 }
 
 .shop-by-categories .all-btn {
   color: var(--baby-font) !important;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   text-decoration-line: underline;
 }
@@ -136,7 +145,6 @@
   margin: 4rem;
   width: 100%;
   text-align: center;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,20 +153,20 @@
 .clothes_deco p {
   color: #fff !important;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-  font-size: 24px !important;
+  font-size: 1.5rem !important;
   font-weight: 400 !important;
 }
 
 .clothes_deco h4 {
   color: #fff !important;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-  font-size: 36px !important;
+  font-size: 2.25rem !important;
   font-weight: 600 !important;
 }
 
 .clothes_deco .cta {
   color: var(--baby-font);
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
   background-color: var(--baby-pink);
@@ -167,15 +175,52 @@
   transition: 0.5s ease;
 }
 
+.hot-products h3 {
+  color: var(--baby-font) !important;
+  font-size: 2.25rem !important;
+  font-weight: 600 !important;
+}
+
+.hot-products h3 span {
+  border-bottom: 7px solid var(--baby-pink);
+}
+
+.hot-products h4 {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-bottom: 7px solid var(--baby-grey);
+}
+
+.hot-products h5 {
+  color: var(--baby-grey);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.hot-product img {
+  height: 250px;
+  width: 250px;
+  border: 1px solid #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.hot-product p {
+  color: var(--baby-font);
+}
+.hot-product p span {
+  color: var(--baby-pink);
+}
+
 .vibes_section {
-  height: 100vh;
+  min-height: 100vh !important;
   padding-top: 3rem;
 }
 
 .vibes_section-text {
   color: var(--baby-font);
   font-family: "Playball", cursive;
-  font-size: 64px;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 400;
   line-height: 74.5%;
@@ -220,7 +265,6 @@
 }
 .vibes_section-text span:nth-child(5)::before {
   background-color: var(--baby-pink);
-
   content: "";
   position: absolute;
   width: calc(100% + 4px);
@@ -229,4 +273,173 @@
   bottom: 5;
   z-index: -1;
   transform: rotate(-2deg);
+}
+
+.car-seat_section {
+  min-height: 100vh;
+  padding-top: 5rem;
+  position: relative !important;
+}
+
+.best-seller-text {
+  /* border: 1px solid blue; */
+}
+
+.best-seller-text h4 {
+font-size: 18.75rem;
+font-weight: 700;
+letter-spacing: 0em;
+color:var(--baby-grey);
+
+transform: rotate(-90deg);
+transform-origin: left center;
+position: absolute;
+bottom: 0;
+left: 0;
+margin: 0;
+white-space: nowrap;
+}
+
+.best-seller-text p {
+  position: absolute;
+  transform: rotate(-90deg);
+  bottom: 50%;
+  transform-origin: center;
+
+font-size: 20px;
+font-weight: 700;
+letter-spacing: 0em;
+text-align: left;
+
+color: var(--baby-font);
+z-index: 1;
+}
+
+.best-seller-text .line_text{
+  display: flex;
+align-items: center;
+}
+
+.best-seller-text .line{
+background: var(--baby-font);
+height: 1px;
+width: 100px;
+}
+
+.car-seat-image {
+  /* background-image: url("../images/car-seat.png"); */
+  background-size: cover;
+  background-position: center center;
+
+  width: 100%;
+}
+
+.car-seat-text h5 {
+  color: var(--baby-font);
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+.car-seat-text h5 span {
+  color: var(--baby-pink);
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+.car-seat-text h6 span {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.car-seat-text h6 {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.car-seat-text p {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.our-story-section {
+  min-height: 100vh;
+}
+
+.our-story-image {
+  background-image: url(../images/pregnant-couple-with-her-hands-belly.jpg);
+  background-position: center center;
+  background-size: cover;
+  min-height: 70%;
+}
+
+.our-story-image h5 {
+  color: var(--baby-pink);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.our-story-image h4 {
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.our-story-image p {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  width: 70vw;
+}
+.our-story-image p span {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding-top: 2rem;
+}
+.our-story-image .cta {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--baby-pink);
+  padding: 10px 20px;
+  width: fit-content;
+  transition: 0.5s ease;
+}
+
+.features_section {
+  min-height: 30%;
+}
+
+.features-icon {
+  border: 1px solid var(--baby-grey);
+  border-radius: 10px;
+  min-height: 200px;
+  column-gap: 2rem;
+
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.features-icon a {
+  text-decoration: none;
+  color: var(--baby-grey);
+}
+
+.features-icon iconify-icon {
+  font-size: 4rem;
+}
+
+.features-icon p  {
+  color: var(--baby-grey);
+  font-size: 1rem;
+}
+
+.features-icon p span {
+  color: var(--baby-font);
+  font-size: 1.25rem;
+  font-weight: 600;
 }
