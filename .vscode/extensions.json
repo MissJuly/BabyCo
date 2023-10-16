@@ -1,0 +1,11 @@
+{
+
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode-remote.vscode-remote-extensionpack"
+    ],
+
+    // Extensions recommended by VS Code which are not recommended for users of zulip/zulip.
+    "unwantedRecommendations": []
+}
