@@ -30,10 +30,6 @@ html {
   background-position: center center;
 }
 
-/* .collapse {
-    display: flex !important;
-} */
-
 .nav-link {
   color: #fff !important;
   font-size: 1rem !important;
@@ -442,4 +438,8 @@ align-items: center;
   color: var(--baby-font);
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.subscribe-newsletter {
+  min-height: 100vh;
 }

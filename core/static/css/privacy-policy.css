@@ -1,0 +1,31 @@
+.row {
+    margin-right: 0 !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  :root {
+    --baby-pink: #d7c0d0;
+    --baby-blue: #b1e5f2;
+    --baby-grey: #c3c3c3;
+    --baby-font: #212738;
+    font-family: "Poppins", sans-serif !important;
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    font-size: 16px; /* Base font size*/
+  }
+
+  .privacy-text p span {
+    color: var(--baby-font) !important;
+  }
+
+ .privacy-text p, li {
+    color: var(--baby-grey) !important;
+  }

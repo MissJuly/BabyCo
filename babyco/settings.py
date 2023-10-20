@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     'django_countries',
 
-    # ------- My apps ----------
+  # ------- My apps ----------
+    'core',
     'users',
     'shop',
 ]
@@ -136,6 +137,24 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# Path to the folder that holds static files
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
+# Path to the folder that holds static files
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -165,3 +184,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # stripe
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_TEST_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_TEST_SECRET_KEY')
+
