@@ -12,6 +12,8 @@ from .views import (
     RequestRefundView
 )
 
+app_name = 'shop'
+
 urlpatterns = [
     path('', ShopView.as_view(), name='shop'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),

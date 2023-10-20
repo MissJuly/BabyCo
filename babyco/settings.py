@@ -28,7 +28,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['https://c965-102-68-77-46.ngrok-free.app']
 
 
 # Application definition
@@ -50,7 +52,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     'django_countries',
 
-  # ------- My apps ----------
+    # ------- My apps ----------
     'core',
     'users',
     'shop',
@@ -175,13 +177,12 @@ EMAIL_HOST_USER = os.getenv('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')
 
 # SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/shop/'
 
 # django crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # stripe
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_TEST_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_TEST_SECRET_KEY')
-
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
