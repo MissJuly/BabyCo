@@ -1,73 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS files and libraries -->
+{% extends "base.html" %}
+{% block css%}
     <link
       rel="stylesheet"
       type="text/css"
       href="../static/css/landing-page-style.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;500;600;700;900&display=swap"
-      rel="stylesheet">
-    <title>Babyco | For everything baby</title>
-  </head>
-  <body>
+  {% endblock %}
+  {% block content %}
     <main>
       <div class="hero-section">
-        <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-3">
-          <!-- BabyCo logo -->
-          <div class="logo">
-            <a class="navbar-brand" href="#"
-              ><img class="img-fluid" src="../static/images/Logo.svg" alt="babyCo-logo"
-            /></a>
-          </div>
-          <!-- Navbar links -->
-          <div class="nav-links">
-            <ul class="navbar-nav gap-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#">HOME</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">SHOP</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">CONTACT US</a>
-              </li>
-            </ul>
-          </div>
-          <div class="navbar">
-            <a class="nav-link d-flex align-items-center gap-1" href="#">
-              <iconify-icon icon="uiw:login"></iconify-icon> LOGIN
-            </a>
-          </div>
-
-          <!-- Navbar toggle for mobile -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
-
         <section class="row" style="height: inherit;">
           <div class="hero-welcome-text p-5 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-center">
             <h2>For Everything Baby, Trust BabyCo</h2>
@@ -92,42 +33,30 @@
             <div class="row">
               <a href="#shop" class="col-md-3">
                 <div class="category  position-relative" style="background-image: url(../static/images/c-01.jpg); background-size: cover; background-position: center; ">
-                    <!-- <div class="image-container"  > -->
-                    <!-- <img class="" src="" alt="Boys"> -->
                       <div class="category_overlay">
                         <h4 class="p-3 text-white">Boys</h4>
                       </div>
-                    <!-- </div> -->
                   </div>
               </a>
               <a href="#shop" class="col-md-3">
               <div class="category  position-relative" style="background-image: url(../static/images/c-02.jpg); background-size: cover; background-position: center; ">
-                  <!-- <div class="image-container position-relative"> -->
-                    <!-- <img class="w-100" src="../static/images/c-02.jpg" alt="Girls"> -->
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Girls</h4>
                     </div>
-                  <!-- </div> -->
                 </div>
               </a>
               <a href="#shop" class="col-md-3">
                 <div class="category  position-relative" style="background-image: url(../static/images/c-03.jpg); background-size: cover; background-position: center; ">
-                  <!-- <div class="image-container position-relative"> -->
-                    <!-- <img class="w-100" src="../static/images/c-03.jpg" alt="Accessories"> -->
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Accessories</h4>
                     </div>
-                  <!-- </div> -->
                 </div>
                 </a>
                 <a href="#shop" class="col-md-3">
               <div class="category position-relative" style="background-image: url(../static/images/c-04.jpg); background-size: cover; background-position: center; ">
-                  <!-- <div class="image-container position-relative"> -->
-                    <!-- <img class="w-100" src="../static/images/c-04.jpg" alt="Toys"> -->
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Toys</h4>
                     </div>
-                  <!-- </div> -->
                 </div>
                 </a>
             </div>
@@ -317,6 +246,7 @@
           </div>
         </div>
       </section>
+      
     </main>
 
     <!-- JavaScript libraries -->
