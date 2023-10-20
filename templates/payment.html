@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "shopbase.html" %}
 
 {% block extra_head %}
 <style>
@@ -116,7 +116,7 @@ button:hover {
                 <div class="custom-control custom-checkbox">
                   <input type="checkbox" class="custom-control-input" name="use_default_card" id="use_default_card">
                   <label class="custom-control-label" for="use_default_card">Use default card:
-                    **** **** **** {{ card.last4 }} 
+                    **** **** **** {{ card.last4 }}
                   <span>Exp: {{ card.exp_month }}/{{ card.exp_year }}</span></label>
                 </div>
               </div>

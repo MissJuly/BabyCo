@@ -13,7 +13,7 @@
           <div class="hero-welcome-text p-5 col-md-12 col-lg-6 d-flex flex-column justify-content-center align-center">
             <h2>For Everything Baby, Trust BabyCo</h2>
             <p>Discover the Best Baby Products and essentials</p>
-            <a href="#shop" class="cta">Shop now</a>
+            <a href="{% url 'shop:shop' %}" class="cta">Shop now</a>
           </div>
         </div>
         <section>
@@ -27,32 +27,32 @@
             <iconify-icon icon="icon-park-outline:pacifier"></iconify-icon>
             <p class="">200+ <br>Unique products</p>
           </div>
-          <a href="#shop" class="all-btn pt-5">ALL CATEGORIES +</a>
+          <a href="{% url 'shop:shop' %}" class="all-btn pt-5">ALL CATEGORIES +</a>
         </div>
         <div class="categories col-md-9">
             <div class="row">
-              <a href="#shop" class="col-md-3">
+              <a href="{% url 'shop:shop' %}" class="col-md-3">
                 <div class="category  position-relative" style="background-image: url(../static/images/c-01.jpg); background-size: cover; background-position: center; ">
                       <div class="category_overlay">
                         <h4 class="p-3 text-white">Boys</h4>
                       </div>
                   </div>
               </a>
-              <a href="#shop" class="col-md-3">
+              <a href="{% url 'shop:shop' %}" class="col-md-3">
               <div class="category  position-relative" style="background-image: url(../static/images/c-02.jpg); background-size: cover; background-position: center; ">
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Girls</h4>
                     </div>
                 </div>
               </a>
-              <a href="#shop" class="col-md-3">
+              <a href="{% url 'shop:shop' %}" class="col-md-3">
                 <div class="category  position-relative" style="background-image: url(../static/images/c-03.jpg); background-size: cover; background-position: center; ">
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Accessories</h4>
                     </div>
                 </div>
                 </a>
-                <a href="#shop" class="col-md-3">
+                <a href="{% url 'shop:shop' %}" class="col-md-3">
               <div class="category position-relative" style="background-image: url(../static/images/c-04.jpg); background-size: cover; background-position: center; ">
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Toys</h4>
@@ -69,7 +69,7 @@
                   <div class="clothes_deco ">
                     <p>20% OFF ALL ORDERS</p>
                     <h4 class="pb-3">Clothes and Apparel</h4>
-                    <a href="#shop" class="cta">Shop now</a>
+                    <a href="{% url 'shop:shop' %}" class="cta">Shop now</a>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@
                   <div class="clothes_deco ">
                     <p>20% OFF ALL ORDERS</p>
                     <h4 class="pb-3">Nursery and Deco</h4>
-                    <a href="#shop" class="cta ">Shop now</a>
+                    <a href="{% url 'shop:shop' %}" class="cta ">Shop now</a>
                   </div>
                 </div>
               </div>
@@ -246,8 +246,8 @@
           </div>
         </div>
       </section>
-      
     </main>
+    {% endblock %}
 
     <!-- JavaScript libraries -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
