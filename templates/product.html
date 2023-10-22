@@ -24,18 +24,18 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge purple mr-1">{{ object.get_category_display }}</span>
+                <span class="badge pink mr-1">{{ object.get_category_display }}</span>
               </a>
             </div>
 
             <p class="lead">
               {% if object.discount_price %}
               <span class="mr-1">
-                <del>${{ object.price }}</del>
+                <del>Ksh {{ object.price }}</del>
               </span>
-              <span>${{ object.discount_price }}</span>
+              <span>Ksh {{ object.discount_price }}</span>
               {% else %}
-              <span>${{ object.price }}</span>
+              <span>Ksh {{ object.price }}</span>
               {% endif %}
             </p>
 
@@ -94,24 +94,27 @@
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4">
+          <img src="/static/images/peach-dress.png" alt="" style="width: 300px; height: 300px;">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
+          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt=""> -->
 
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
+          <img src="/static/images/dino.jpg" alt="" style="width: 300px; height: 300px;">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
+          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt=""> -->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img src="/static/images/swimsuit.jpg" alt="" style="width: 300px; height: 300px;">
+
+          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt=""> -->
 
         </div>
         <!--Grid column-->

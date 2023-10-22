@@ -19,7 +19,7 @@ a {
   background-color: none !important;
 }
 
-* {
+*  {
   scroll-behavior: smooth;
 }
 
@@ -446,4 +446,13 @@ html {
 
 .subscribe-newsletter {
   min-height: 100vh;
+}
+
+.newsletter {
+  position: absolute !important;
+  margin: 0 !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-bottom: 2px solid var(--baby-grey) !important  ;
 }

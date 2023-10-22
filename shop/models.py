@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
+from PIL import Image
 from shop.choices import CATEGORY_CHOICES, LABEL_CHOICES, ADDRESS_CHOICES
 
 
@@ -34,6 +35,16 @@ class Item(models.Model):
             'slug': self.slug
         })
 
+     # resize the image while saving
+    def save(self, *args, **kwargs):
+        super(Item, self).save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
 
 class OrderItem(models.Model):
     """This is an item added to cart"""
