@@ -357,7 +357,16 @@ class ShopView(ListView):
     paginate_by = 10
     template_name = "home.html"
 
+<<<<<<< Updated upstream
 
+=======
+# Search view
+class SearchView(ListView):
+    model = Item
+    template_name = "search_results.html"
+    context_object_name = "results"
+    paginate_by = 10
+>>>>>>> Stashed changes
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
