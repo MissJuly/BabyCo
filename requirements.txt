@@ -1,9 +1,11 @@
+python>=3.8
+
 asgiref==3.7.2
 backports.zoneinfo==0.2.1
 certifi==2023.7.22
 cffi==1.16.0; python_version >= '3.8'
 charset-normalizer==3.3.0
-crispy-bootstrap4==2023.1; python_version >= 3.8
+crispy-bootstrap4==2023.1; python_version >= '3.8'
 cryptography==41.0.4
 defusedxml==0.7.1
 Django==4.2.5

@@ -358,6 +358,7 @@ class ShopView(ListView):
     paginate_by = 10
     template_name = "home.html"
 
+
 # Search view
 class SearchView(ListView):
     model = Item
@@ -376,8 +377,8 @@ class SearchView(ListView):
             'query': query,
         })
         return context
-
     
+
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
