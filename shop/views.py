@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
@@ -357,16 +358,27 @@ class ShopView(ListView):
     paginate_by = 10
     template_name = "home.html"
 
-<<<<<<< Updated upstream
 
-=======
 # Search view
 class SearchView(ListView):
     model = Item
     template_name = "search_results.html"
     context_object_name = "results"
     paginate_by = 10
->>>>>>> Stashed changes
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        query = self.request.GET.get('q')
+        if query:
+            queryset = Item.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+            results = queryset.distinct()
+        context.update({
+            'results': results,
+            'query': query,
+        })
+        return context
+    
+
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
