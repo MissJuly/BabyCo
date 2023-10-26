@@ -105,62 +105,16 @@
         </div>
         <div class="products px-5 py-4">
           <div class="row">
+            {% for item in items %}
             <div class="col-md-3">
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/peach-dress.png' %}" alt="peach-dress">
-                    <p class="pt-2">Peach Colored Dress<br><span>Ksh1500</span></p>
-                  </a>
-                </div>
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/dino.jpg' %}" alt="dino-set" >
-                    <p class="pt-2">Dinosaur Set<br><span>Ksh2000</span></p>
-                  </a>
-                </div>
+              <div class="hot-product">
+                <a href="{{ item.get_absolute_url }}">
+                  <img class="p-3" loading="lazy" src="{{ item.image.url }}" alt="peach-dress">
+                  <p class="pt-2">{{ item.title }}<br><span>Ksh. {{ item.price }}</span></p>
+                </a>
+              </div>
             </div>
-            <div class="col-md-3">
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/shoes.jpg' %}" alt="denim-shoes">
-                    <p class="pt-2">Custom-Denim Shoes<br><span>Ksh1700</span></p>
-                  </a>
-                </div>
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/swimsuit.jpg' %}" alt="swimsuit" >
-                    <p class="pt-2">Shark Swimsuit Set<br><span>Ksh1500</span></p>
-                  </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/pacifier.jpg' %}" alt="pacifier">
-                    <p class="pt-2">Pacifier and Baby Bottle Set<br><span>Ksh1000</span></p>
-                  </a>
-                </div>
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/bicycle.jpg' %}" alt="dino-set" >
-                    <p class="pt-2">Bicycle with Training Wheels<br><span>Ksh15000</span></p>
-                  </a>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/princess-dress.jpg' %}" alt="princess-dress">
-                    <p class="pt-2">Princess Dress<br><span>Ksh2500</span></p>
-                  </a>
-                </div>
-                <div class="hot-product">
-                  <a href="#shop">
-                    <img class="p-3" loading="lazy" src="{% static '/images/pregnancy-pillow.jpg' %}" alt="pregnancy-pillow" >
-                    <p class="pt-2">U-shaped Pregnancy Pillow<br><span>Ksh4500</span></p>
-                  </a>
-                </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
 

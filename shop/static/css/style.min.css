@@ -16,7 +16,7 @@
 }
 
 .product-grey {
-    background-color: var(--baby-grey);
+    background-color: var(--baby-grey) !important;
     color: var(--baby-font) !important;
     font-weight: normal;
 }
@@ -24,4 +24,19 @@
 .product-text {
     color: var(--baby-font) !important;
 }
+
+
+.dropdown-menu {
+    min-width: 600px;
+    background: var(--baby-blue);
+  }
+
+  .dropdown-item {
+    background-color: transparent !important;
+    color: var(--baby-font) !important;
+  }
+
+  .dropdown-item:hover {
+    color: white !important;
+  }
 

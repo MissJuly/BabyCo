@@ -381,6 +381,21 @@ class SearchView(ListView):
         return context
 
 
+class CategoryItemsView(ListView):
+    model = Item
+    template_name = "filter_products.html"
+    context_object_name = "items"
+
+    def get_queryset(self):
+        category_name = self.kwargs['category_name']
+        return Item.objects.filter(category=category_name)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category_name'] = self.kwargs['category_name']
+        return context
+
+
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
