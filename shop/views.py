@@ -1,5 +1,6 @@
 import random
 import string
+from typing import Any
 
 import stripe
 from django.conf import settings
@@ -370,14 +371,15 @@ class SearchView(ListView):
         context = super().get_context_data(**kwargs)
         query = self.request.GET.get('q')
         if query:
-            queryset = Item.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+            queryset = Item.objects.filter(
+                Q(title__icontains=query) | Q(description__icontains=query))
             results = queryset.distinct()
         context.update({
             'results': results,
             'query': query,
         })
         return context
-    
+
 
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
@@ -395,6 +397,24 @@ class OrderSummaryView(LoginRequiredMixin, View):
 class ItemDetailView(DetailView):
     model = Item
     template_name = "product.html"
+
+    def get_context_data(self, **kwargs: Any):
+        """Add 3 random products in the detail view footer"""
+        context = super().get_context_data(**kwargs)
+        current_item = self.get_object()
+        pks = Item.objects.exclude(pk=current_item.pk).values_list('pk', flat=True)
+        random_pks = random.sample(list(pks), 3)
+
+        # return products from pks
+        items = []
+        for pk in random_pks:
+            item = get_object_or_404(Item, pk=pk)
+            items.append(item)
+        print(items)
+        context.update({
+            'items': items
+        })
+        return context
 
 
 @login_required

@@ -1,4 +1,4 @@
-{% load cart_template_tags %}
+{% load cart_template_tags %} {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,11 +6,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}" />
+    <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}" />
     {% block css %}{% endblock %}
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -34,7 +34,7 @@
         <a class="navbar-brand" href="#"
           ><img
             class="img-fluid"
-            src="../static/images/Logo.svg"
+            src="{% static 'images/Logo.svg' %}"
             alt="babyCo-logo"
         /></a>
       </div>
@@ -48,10 +48,10 @@
             <a class="nav-link" href="{% url 'shop:shop' %}">SHOP</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">ABOUT US</a>
+            <a class="nav-link" href="#ourStory">ABOUT US</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">CONTACT US</a>
+            <a class="nav-link" href="#contact">CONTACT US</a>
           </li>
         </ul>
       </div>
@@ -64,10 +64,10 @@
             href="{% url 'shop:order-summary' %}"
             class="nav-link waves-effect"
           >
-            <span class="badge red z-depth-1 mr-1">
+            <span class="badge rounded-0 product-primary z-depth-1 mr-1">
               {{ request.user|cart_item_count }}
             </span>
-            <i class="fas fa-shopping-cart"></i>
+            <iconify-icon icon="vaadin:cart"></iconify-icon>
             <span class="clearfix d-none d-sm-inline-block"> Cart </span>
           </a>
         </li>
@@ -106,18 +106,91 @@
 
     <main>{% block content %}{% endblock %}</main>
 
-    <footer>
+    <footer class="position-relative mt-3">
+      <h3 class="text-muted mark text-center m-3">Testimonials</h3>
+      <div id="carouselExampleCaptions" class="carousel slide mb-5" style="">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="height: 50vh;">
+            <img src="{% static 'images/testimonial.jpg' %}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Mary Anne</h5>
+              <p class="lead">
+                "BabyCo made shopping for baby essentials a breeze! Quality products and quick delivery. We're loyal customers now."
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item" style="height: 50vh;">
+            <img src="{% static 'images/testimonial.jpg' %}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Joyous Treats</h5>
+              <p class="lead">
+                "The variety of baby products at BabyCo is impressive. From strollers to diapers, they've got it all. Highly recommend!"
+              </p>
+            </div>
+          </div>
+          <div class="carousel-item" style="height: 50vh;">
+            <img src="{% static 'images/testimonial.jpg' %}" class="d-block w-100" alt="..." />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Maulhayat Sabrina</h5>
+              <p class="lead">
+                "As first-time parents, BabyCo was a lifesaver. Their helpful guides and top-notch products eased our parenting journey. Thank you!"
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
       <section class="subscribe-newsletter position-relative">
         <div class="newsletter">
-          <div class="row">
+          <div class="row d-flex align-items-center border-top border-bottom py-3 px-5 mt-3">
             <div class="col-md-4">
-              <div class="d-flex gap-3 align-items-center">
+              <div class="d-flex gap-3 align-items-center d-flex align-items-cente">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="128"
                   height="108"
                   viewBox="0 0 128 108"
                   fill="none"
+                  style="width: 30%;"
                 >
                   <g clip-path="url(#clip0_84_314)">
                     <path
@@ -135,28 +208,66 @@
                     </clipPath>
                   </defs>
                 </svg>
-                <p class="">
-                  Join now and get 10% off <br />
-                  your next purchase!
+                <p class="m-0" style="font-weight: bold;">
+                  Join now and get 10% off your next purchase!
                 </p>
               </div>
             </div>
-            <div class="col-md-4">
-              <p class="">
-                You may unsubscribe at any moment. For that purpose, <br />
+            <div class="col-md-4 d-flex align-items-center jusitify-content-between gap-4">
+            <div style="background: var(--baby-grey); width: 1px; height: 4rem;"></div>
+              <p class="m-0" style="color: var(--baby-grey);">
+                You may unsubscribe at any moment. For that purpose,
                 please find our contact info in Terms and Conditions
               </p>
             </div>
             <div class="col-md-4">
               <form action="">
-                <div class="">
-                  <input type="text" placeholder="Your email address" name="mail" required>
-                  <input type="submit" value="Subscribe">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    placeholder="Your email address"
+                    name="mail"
+                    required
+                    class="form-control p-2 rounded-0"
+                  />
+                  <input class="input-group-append btn btn-dark rounded-0" type="submit" value="SUBSCRIBE" />
                 </div>
               </form>
             </div>
           </div>
         </div>
+      </section>
+      <section id="contact" class="px-3 py-5 bg-light d-flex justify-content-between">
+        <div>
+          <a href="{% url 'landing-page' %}">
+            <img class="img-fluid" src="{% static 'images/Logo.svg' %}" alt="" srcset="">
+          </a>
+          <div class="mt-5">
+            <p style="font-weight: bold;">Contact us</p>
+            <p><span style="font-weight: 600;">E-Mail:</span> <a class="text-dark text-decoration-underline" href="mailto:admin@babyco.com">admin@babyco.com</a></p>
+            <p><span style="font-weight: 600;">Telephone:</span> <a class="text-dark text-decoration-underline" href="tel: +2547234567890">+2547234567890</a></p>
+            <a class="btn btn-dark" href="{% url 'shop:shop' %}">Go to shop</a>
+          </div>
+          <div>
+            <p class="small w-50 pt-4" style="color: var(--baby-grey);">BabyCo is an e-Commerce platform dedicated to providing high-quality baby products and essentials for parents and caregivers. From clothing and toys to feeding and nursery items, we've got you covered throughout your parenting journey.</p>
+          </div>
+        </div>
+        <div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22365.198534097202!2d36.81921570090474!3d-1.286963995511132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11fa64ae7a9b%3A0x6da13531a93c45a2!2sKenya%20National%20Archives!5e0!3m2!1sen!2ske!4v1698329818207!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </section>
+      <section class="border-top p-2">
+      <div class="">
+        <ul class="list-unstyled d-flex gap-3">
+          <li>
+            <a style="color: var(--baby-font); font-weight: 600;" class="" href="{% url 'privacy' %}">Privacy</a>
+          </li>
+          <li>
+            <a style="color: var(--baby-font); font-weight: 600;" href="{% url 'terms' %}">Terms</a>
+          </li>
+        </ul>
+      </div>
       </section>
     </footer>
     <!-- JavaScript libraries -->
