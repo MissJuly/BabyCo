@@ -6,6 +6,11 @@ a {
   text-decoration: none !important;
 }
 
+.product-primary {
+  background-color: var(--baby-blue) !important;
+  color: #fff !important;
+}
+
 :root {
   --baby-pink: #d7c0d0;
   --baby-blue: #b1e5f2;
@@ -17,9 +22,12 @@ a {
 
 .navbar {
   background-color: none !important;
+  position: absolute !important;
+  display: flex;
+  width: 100%;
 }
 
-*  {
+* {
   scroll-behavior: smooth;
 }
 
@@ -286,7 +294,7 @@ html {
 }
 
 .best-seller-text h4 {
-  font-size: 18.75rem;
+  font-size: 16rem;
   font-weight: 700;
   letter-spacing: 0em;
   color: var(--baby-grey);
@@ -444,15 +452,5 @@ html {
   font-weight: 600;
 }
 
-.subscribe-newsletter {
-  min-height: 100vh;
-}
-
 .newsletter {
-  position: absolute !important;
-  margin: 0 !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  border-bottom: 2px solid var(--baby-grey) !important  ;
 }

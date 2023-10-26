@@ -55,6 +55,9 @@
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
+        <li class="nav-item">
+          <a href="{% url 'shop:shop' %}" class="nav-link waves-effect">Shop</a>
+        </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item">
           <a
