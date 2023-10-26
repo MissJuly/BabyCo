@@ -2,6 +2,7 @@ from django.urls import path
 from .views import (
     ShopView,
     ItemDetailView,
+    CategoryItemsView,
     CheckoutView,
     OrderSummaryView,
     add_to_cart,
@@ -28,4 +29,5 @@ urlpatterns = [
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
     path('search/', SearchView.as_view(), name='search_results'),
+    path('category/<str:category_name>/', CategoryItemsView.as_view(), name='category_items'),
 ]

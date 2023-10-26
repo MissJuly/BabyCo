@@ -21,21 +21,41 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto text-white">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">All
-                <span class="sr-only">(current)</span>
+            <li class="nav-item dropdown">
+              <a class="primary-blue nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="row">
+                  <div class="col-md-6">
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Bath and Potty' %}">Bath and Potty</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Books and Educational Materials' %}">Books and Educational Materials</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Clothing and Apparel' %}">Clothing and Apparel</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Diapers and Changing' %}">Diapers and Changing</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Feeding and Nursing' %}">Feeding and Nursing</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Gifts and Special Occasions' %}">Gifts and Special Occasions</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Health and Nutrition' %}">Health and Nutrition</a>
+                  </div>
+                  <div class="col-md-6">
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Maternity and Pregnancy' %}">Maternity and Pregnancy</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Nursery and Decor' %}">Nursery and Decor</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Parenting Essentials' %}">Parenting Essentials</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Safety and Health' %}">Safety and Health</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Toys and Games' %}">Toys and Games</a>
+                    <a class="dropdown-item" href="{% url 'shop:category_items' 'Travel and Strollers' %}">Travel and Strollers</a>
+                  </div>
+                </div>
+              </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shirts</a>
+              <a class="nav-link" href="{% url 'shop:category_items' 'Clothing and Apparel' %}">Clothing and Apparel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sport wears</a>
+              <a class="nav-link" href="{% url 'shop:category_items' 'Feeding and Nursing' %}">Feeding and Nursing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Outwears</a>
+              <a class="nav-link" href="{% url 'shop:category_items' 'Toys and Game' %}">Toys and Games</a>
             </li>
-
           </ul>
           <!-- Links -->
 
@@ -44,14 +64,19 @@
               <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q">
             </div>
           </form>
+
+          </div>
+
         </div>
+
+
         <!-- Collapsible content -->
 
       </nav>
       <!--/.Navbar-->
 
       <!--Section: Products v.3-->
-      <section class="text-center mb-4">
+      <section class="text-center mb-4 px-5">
 
         <div class="row wow fadeIn">
 
@@ -72,7 +97,7 @@
 
 
               <div class="card-body text-center">
-                <a href="{%  url 'shop:search_results' %}" class="grey-text">
+                <a href="{%  url 'shop:category_items' item.get_category_display %}" class="grey-text">
                   <p class="badge product-primary">{{ item.get_category_display }}</p>
                 </a>
                 <h5>
