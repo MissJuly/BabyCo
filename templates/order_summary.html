@@ -34,7 +34,7 @@
             {% else %}
                 Ksh {{ order_item.get_total_item_price }}
             {% endif %}
-            <a style='color: red;' href="{% url 'shop:remove-from-cart' order_item.item.slug %}">
+            <a style='color: #d7c0d0;' href="{% url 'shop:remove-from-cart' order_item.item.slug %}">
                 <i class="fas fa-trash float-right"></i>
             </a>
             </td>
@@ -45,7 +45,7 @@
         </tr>
         <tr>
             <td colspan="5">
-            <a class='btn btn-primary float-right' href='/'>Continue shopping</a>
+            <a class='btn product-primary float-right' href="{% url 'shop:shop' %}">Continue shopping</a>
             </td>
         </tr>
         {% endfor %}
@@ -62,8 +62,8 @@
         </tr>
         <tr>
             <td colspan="5">
-            <a class='btn btn-warning float-right ml-2' href="{% url 'shop:checkout' %}">Proceed to checkout</a>
-            <a class='btn btn-primary float-right' href="{% url 'shop:shop' %}">Continue shopping</a>
+            <a class='btn product-danger float-right ml-2' href="{% url 'shop:checkout' %}">Proceed to checkout</a>
+            <a class='btn product-primary float-right' href="{% url 'shop:shop' %}">Continue shopping</a>
             </td>
         </tr>
         {% endif %}

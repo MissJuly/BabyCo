@@ -24,11 +24,11 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge pink mr-1">{{ object.get_category_display }}</span>
+                <span class="badge product-grey mr-1">{{ object.get_category_display }}</span>
               </a>
             </div>
 
-            <p class="lead">
+            <p class="lead product-text">
               {% if object.discount_price %}
               <span class="mr-1">
                 <del>Ksh {{ object.price }}</del>
@@ -39,7 +39,7 @@
               {% endif %}
             </p>
 
-            <p class="lead font-weight-bold">Description</p>
+            <p class="h5 font-weight-bolde">Description</p>
 
             <p>{{ object.description }}</p>
 
@@ -52,11 +52,11 @@
               </button>
 
             </form> {% endcomment %}
-            <a href="{{ object.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+            <a href="{{ object.get_add_to_cart_url }}" class="btn product-primary btn-md my-0 p">
               Add to cart
               <i class="fas fa-shopping-cart ml-1"></i>
             </a>
-            <a href="{{ object.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+            <a href="{{ object.get_remove_from_cart_url }}" class="btn product-danger btn-md my-0 p">
               Remove from cart
             </a>
 
@@ -92,32 +92,19 @@
       <!--Grid row-->
       <div class="row wow fadeIn">
 
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
-          <img src="/static/images/peach-dress.png" alt="" style="width: 300px; height: 300px;">
-
-          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt=""> -->
-
-        </div>
-        <!--Grid column-->
+      {% for item in items %}
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4">
-          <img src="/static/images/dino.jpg" alt="" style="width: 300px; height: 300px;">
-
-          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt=""> -->
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <img src="/static/images/swimsuit.jpg" alt="" style="width: 300px; height: 300px;">
+        <a href="{{ item.get_absolute_url }}">
+          <img src="{{ item.image.url }}" alt="" style="width: 300px; height: 300px;">
+        </a>
 
           <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt=""> -->
 
         </div>
         <!--Grid column-->
+      {% endfor %}
 
       </div>
       <!--Grid row-->

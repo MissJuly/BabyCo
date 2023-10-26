@@ -3,3 +3,25 @@
 .item-count_badge span:nth-child(1) {
     background-color: var(--baby-blue) !important;
     color: #fff;
+}
+
+.product-danger {
+    background-color: var(--baby-pink) !important;
+    color: #fff !important;
+}
+
+.product-primary {
+    background-color: var(--baby-blue) !important;
+    color: #fff !important;
+}
+
+.product-grey {
+    background-color: var(--baby-grey);
+    color: var(--baby-font) !important;
+    font-weight: normal;
+}
+
+.product-text {
+    color: var(--baby-font) !important;
+}
+

@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% load static %}
 {% block css%}
     <link
       rel="stylesheet"
       type="text/css"
-      href="../static/css/landing-page-style.css"
+      href="{% static 'css/landing-page-style.css' %}"
     />
   {% endblock %}
   {% block content %}
@@ -32,28 +32,28 @@
         <div class="categories col-md-9">
             <div class="row">
               <a href="{% url 'shop:shop' %}" class="col-md-3">
-                <div class="category  position-relative" style="background-image: url(../static/images/c-01.jpg); background-size: cover; background-position: center; ">
+                <div class="category  position-relative" loading="lazy" style="background-image: url({% static '/images/c-01.jpg' %}); background-size: cover; background-position: center; ">
                       <div class="category_overlay">
                         <h4 class="p-3 text-white">Boys</h4>
                       </div>
                   </div>
               </a>
               <a href="{% url 'shop:shop' %}" class="col-md-3">
-              <div class="category  position-relative" style="background-image: url(../static/images/c-02.jpg); background-size: cover; background-position: center; ">
+              <div class="category  position-relative" style="background-image: url({% static '/images/c-02.jpg' %}); background-size: cover; background-position: center; ">
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Girls</h4>
                     </div>
                 </div>
               </a>
               <a href="{% url 'shop:shop' %}" class="col-md-3">
-                <div class="category  position-relative" style="background-image: url(../static/images/c-03.jpg); background-size: cover; background-position: center; ">
+                <div class="category  position-relative" style="background-image: url({% static '/images/c-03.jpg' %}); background-size: cover; background-position: center; ">
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Accessories</h4>
                     </div>
                 </div>
                 </a>
                 <a href="{% url 'shop:shop' %}" class="col-md-3">
-              <div class="category position-relative" style="background-image: url(../static/images/c-04.jpg); background-size: cover; background-position: center; ">
+              <div class="category position-relative" style="background-image: url({% static '/images/c-04.jpg' %}); background-size: cover; background-position: center; ">
                     <div class="category_overlay">
                       <h4 class="p-3 text-white">Toys</h4>
                     </div>
@@ -64,7 +64,7 @@
         <div class="order_deals mt-3">
           <div class="row" style="min-height: 65vh;">
             <div class="col-md-6">
-              <div class="d-flex justify-content-center"  style="background-image: url(../static/images/c-05.jpg); background-size: cover; background-position: center; height: 100%;">
+              <div class="d-flex justify-content-center"  style="background-image: url({% static '/images/c-05.jpg' %}); background-size: cover; background-position: center; height: 100%;">
                 <div class="order_deals-border">
                   <div class="clothes_deco ">
                     <p>20% OFF ALL ORDERS</p>
@@ -75,7 +75,7 @@
               </div>
             </div>
             <div class="col-md-6" >
-              <div class="d-flex justify-content-center" style="background-image: url(../static/images/c-06.jpg); background-size: cover; background-position: center; height: 100%;">
+              <div class="d-flex justify-content-center" style="background-image: url({% static '/images/c-06.jpg' %}); background-size: cover; background-position: center; height: 100%;">
                 <div class="order_deals-border">
                   <div class="clothes_deco ">
                     <p>20% OFF ALL ORDERS</p>
@@ -108,13 +108,13 @@
             <div class="col-md-3">
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/peach-dress.png" alt="peach-dress">
+                    <img class="p-3" loading="lazy" src="{% static '/images/peach-dress.png' %}" alt="peach-dress">
                     <p class="pt-2">Peach Colored Dress<br><span>Ksh1500</span></p>
                   </a>
                 </div>
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/dino.jpg" alt="dino-set" >
+                    <img class="p-3" loading="lazy" src="{% static '/images/dino.jpg' %}" alt="dino-set" >
                     <p class="pt-2">Dinosaur Set<br><span>Ksh2000</span></p>
                   </a>
                 </div>
@@ -122,13 +122,13 @@
             <div class="col-md-3">
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/shoes.jpg" alt="denim-shoes">
+                    <img class="p-3" loading="lazy" src="{% static '/images/shoes.jpg' %}" alt="denim-shoes">
                     <p class="pt-2">Custom-Denim Shoes<br><span>Ksh1700</span></p>
                   </a>
                 </div>
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/swimsuit.jpg" alt="swimsuit" >
+                    <img class="p-3" loading="lazy" src="{% static '/images/swimsuit.jpg' %}" alt="swimsuit" >
                     <p class="pt-2">Shark Swimsuit Set<br><span>Ksh1500</span></p>
                   </a>
                 </div>
@@ -136,13 +136,13 @@
             <div class="col-md-3">
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/pacifier.jpg" alt="pacifier">
+                    <img class="p-3" loading="lazy" src="{% static '/images/pacifier.jpg' %}" alt="pacifier">
                     <p class="pt-2">Pacifier and Baby Bottle Set<br><span>Ksh1000</span></p>
                   </a>
                 </div>
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/bicycle.jpg" alt="dino-set" >
+                    <img class="p-3" loading="lazy" src="{% static '/images/bicycle.jpg' %}" alt="dino-set" >
                     <p class="pt-2">Bicycle with Training Wheels<br><span>Ksh15000</span></p>
                   </a>
                 </div>
@@ -150,13 +150,13 @@
             <div class="col-md-3">
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/princess-dress.jpg" alt="princess-dress">
+                    <img class="p-3" loading="lazy" src="{% static '/images/princess-dress.jpg' %}" alt="princess-dress">
                     <p class="pt-2">Princess Dress<br><span>Ksh2500</span></p>
                   </a>
                 </div>
                 <div class="hot-product">
                   <a href="#shop">
-                    <img class="p-3" src="../static/images/pregnancy-pillow.jpg" alt="pregnancy-pillow" >
+                    <img class="p-3" loading="lazy" src="{% static '/images/pregnancy-pillow.jpg' %}" alt="pregnancy-pillow" >
                     <p class="pt-2">U-shaped Pregnancy Pillow<br><span>Ksh4500</span></p>
                   </a>
                 </div>
@@ -165,7 +165,7 @@
         </div>
 
       </section>
-      <section id="vibes" class="vibes_section" style="background: url('../static/images/baby-room.jpg'); background-size: cover; background-position: center center;">
+      <section id="vibes" class="vibes_section" style="background: url('{% static '/images/baby-room.jpg' %}'); background-size: cover; background-position: center center;">
       <p class="vibes_section-text"><span>Good</span> <br> <span>Vibes</span><br> <span>Only!</span></p>
       </section>
 
@@ -180,7 +180,7 @@
               <h4 class="">seat</h4>
             </div>
             <div class="col-md-5">
-              <img class="car-seat-image img-fluid" src="../static/images/car-seat.png" alt="car-seat">
+              <img class="car-seat-image img-fluid" loading="lazy" src="{% static '/images/car-seat.png' %}" alt="car-seat">
               </div>
                 <div class="car-seat-text col-md-5 align-items-bottom pe-5">
                   <h5>Graco SnugRide 35 Lite LX Infant Car Seat<br>(SnugRide, Studio)<br><span>Ksh 19,000</span></h5>
@@ -201,7 +201,7 @@
         </div>
       </section>
 
-      <section class="our-story-section">
+      <section id="ourStory" class="our-story-section">
         <div class="our-story-image ps-5 py-5">
           <div class="our-story-text">
             <h5>OUR STORY</h5>
@@ -249,6 +249,6 @@
     </main>
     {% endblock %}
 
-   
+
   </body>
 </html>
