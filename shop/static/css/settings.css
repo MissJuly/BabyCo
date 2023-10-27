@@ -1,0 +1,74 @@
+:root {
+    --baby-pink: #d7c0d0;
+    --baby-blue: #b1e5f2;
+    --baby-grey: #c3c3c3;
+    --baby-font: #212738;
+    font-family: "Poppins", sans-serif !important;
+}
+
+#settings .order.nav-pills .active {
+    background-color: var(--baby-font) !important;
+}
+#settings .order.nav-pills .active:hover {
+    background-color: var(--baby-font) !important;
+}
+
+
+
+#settings .nav-pills .active {
+    background-color: var(--baby-blue);
+    color: #fff !important;
+    box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.55);
+        -webkit-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.55);
+        -moz-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.55);
+}
+#settings .nav-pills .active:hover {
+    background-color: var(--baby-blue) !important;
+    box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.55);
+        -webkit-box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.55);
+        -moz-box-shadow: 10px 10px 20px -8px rgba(0, 0, 0, 0.55);
+}
+#settings .nav-pills .nav-link {
+    color: var(--baby-font);
+}
+#settings .nav-pills .nav-link:hover {
+    background-color: var(--baby-grey);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#settings #cancel {
+    border: 3px solid var(--baby-blue) !important;
+    color: var(--baby-blue) !important;
+}
+
+#settings #delete {
+    border: 3px solid var(--baby-pink) !important;
+    color: var(--baby-pink) !important;
+}
+
+.alert-danger {
+    color: #58151c !important;
+    background-color: #f8d7da !important;
+    border-color: #f1aeb5 !important;
+}
+
+#approveMessage {
+    color: #0a3622;
+    background-color: #d1e7dd;
+    border-color: #a3cfbb;
+}

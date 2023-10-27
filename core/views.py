@@ -5,8 +5,9 @@ from shop.models import Item
 class LandingPageView(ListView):
     template_name = 'landing-page.html'
     model = Item
-    paginate_by = 8
     context_object_name = "items"
+    paginate_by = 8
+    ordering = ['-pk']
 
 
 class PrivacyPolicyView(TemplateView):

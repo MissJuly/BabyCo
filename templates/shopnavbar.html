@@ -37,7 +37,7 @@
     </button>
 
     <!-- Links -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarSupportedContent">
       <!-- Left -->
       <ul class="navbar-nav mr-auto">
         {% comment %}
@@ -78,6 +78,13 @@
             <span class="clearfix d-none d-sm-inline-block"> Logout </span>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="{% url 'settings' %}" class="nav-link waves-effect">
+          <i class="fas fa-cog"></i>
+          {{user}}
+          </a>
+        </li>
+
         {% else %}
         <li class="nav-item">
           <a class="nav-link waves-effect" href="{% url 'account_login' %}">
