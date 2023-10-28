@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms and Conditions | BabyCo</title>
-</head>
-<body>
+{% extends "shopbase.html" %}
+{%block title %}Terms and Conditions{% endblock %}
+{% block content %}
+<div class="p-5">
+
   <h1>Terms and Conditions for BabyCo</h1>
 
   <h2>1. Acceptance of Terms</h2>
@@ -21,7 +18,7 @@
   <p>We make every effort to provide accurate product descriptions, prices, and availability. However, we do not guarantee the accuracy of this information and reserve the right to correct any errors.</p>
 
   <h2>5. Privacy</h2>
-  <p>Please review our <a href="#privacy-policy">Privacy Policy</a> to understand how we collect, use, and protect your personal information. By using our website, you consent to the practices outlined in our Privacy Policy.</p>
+  <p>Please review our <a href="{% url 'privacy' %}">Privacy Policy</a> to understand how we collect, use, and protect your personal information. By using our website, you consent to the practices outlined in our Privacy Policy.</p>
 
   <h2>6. Intellectual Property</h2>
   <p>The content on the BabyCo website, including text, images, logos, and trademarks, is protected by copyright and other intellectual property laws. You may not use, modify, or distribute our content without our written consent.</p>
@@ -54,6 +51,6 @@
   <h2>13. Contact Us</h2>
   <p>If you have questions or concerns about these Terms and Conditions, please contact us at [Your Contact Information].</p>
 
-  <p><a id="privacy-policy" href="#privacy-policy">Privacy Policy</a></p>
-</body>
-</html>
+  <p><a id="privacy-policy" href="{% url 'privacy' %}">Privacy Policy</a></p>
+</div>
+{% endblock %}
