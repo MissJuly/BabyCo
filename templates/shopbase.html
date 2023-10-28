@@ -9,7 +9,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{% block head_title %}{% endblock %}</title>
+    <title>{% block head_title %}{% endblock %} | BabyCo</title>
     {% block extra_head %} {% endblock %}
     <link
       rel="stylesheet"
@@ -82,7 +82,9 @@
       </div>
       {% endfor %} {% endif %}
     </div>
-    {% block content %} {% endblock content %}
+    <div class="" style="min-height: 100vh;">
+      {% block content %} {% endblock content %}
+    </div>
 
     {% block extra_body %}
     {% endblock %} {% include "shopfooter.html" %} {% include "scripts.html" %}

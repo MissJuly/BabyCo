@@ -9,7 +9,7 @@
       <div class="row wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-4 ">
 
           <img src="{{ object.image.url }}" class="img-fluid" alt="">
 
@@ -21,9 +21,10 @@
 
           <!--Content-->
           <div class="p-4">
+            <h3 class="">{{ object.title }}</h3>
 
             <div class="mb-3">
-              <a href="">
+              <a href="{%  url 'shop:category_items' item.get_category_display %}">
                 <span class="badge product-grey mr-1">{{ object.get_category_display }}</span>
               </a>
             </div>
@@ -43,15 +44,7 @@
 
             <p>{{ object.description }}</p>
 
-            {% comment %} <form class="d-flex justify-content-left">
-              <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p" type="submit">
-                Add to cart
-                <i class="fas fa-shopping-cart ml-1"></i>
-              </button>
 
-            </form> {% endcomment %}
             <a href="{{ object.get_add_to_cart_url }}" class="btn product-primary btn-md my-0 p">
               Add to cart
               <i class="fas fa-shopping-cart ml-1"></i>
@@ -69,44 +62,41 @@
       </div>
       <!--Grid row-->
 
-      <hr>
-
-      <!--Grid row-->
-      <div class="row d-flex justify-content-center wow fadeIn">
+      <div class="row d-flex justify-content wow fadeIn">
 
         <!--Grid column-->
-        <div class="col-md-6 text-center">
+        <div class="text-center">
 
           <h4 class="my-4 h4">Additional information</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+          <p>{{ object.additional_information }}</p>
 
         </div>
         <!--Grid column-->
 
       </div>
+      <hr>
+
+      <!--Grid row-->
       <!--Grid row-->
 
       <!--Grid row-->
-      <div class="row wow fadeIn">
 
+    <div class="row wow fadeIn">
+        <h3 class=" text-center p-3 h3">Similar Products</h3>
       {% for item in items %}
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-        <a href="{{ item.get_absolute_url }}">
-          <img src="{{ item.image.url }}" alt="" style="width: 300px; height: 300px;">
-        </a>
-
-          <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt=""> -->
-
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-70 p-3">
+            <a href="{{ item.get_absolute_url }}">
+              <img src="{{ item.image.url }}" alt="" style="width: 300px; height: 300px;">
+            </a>
+          </div>
         </div>
         <!--Grid column-->
       {% endfor %}
 
-      </div>
+    </div>
       <!--Grid row-->
 
     </div>

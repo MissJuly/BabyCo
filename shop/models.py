@@ -15,6 +15,7 @@ class Item(models.Model):
     label = models.CharField(choices=LABEL_CHOICES, max_length=50)
     slug = models.SlugField()
     description = models.TextField()
+    additional_information = models.TextField(default="more info", blank=True, null=True)
     image = models.ImageField()
 
     def __str__(self):
@@ -124,7 +125,7 @@ class Address(models.Model):
     street_address = models.CharField(max_length=100)
     apartment_address = models.CharField(max_length=100)
     country = CountryField(multiple=False)
-    zip = models.CharField(max_length=100)
+    zip = models.CharField(blank=True, null=True, max_length=100)
     address_type = models.CharField(max_length=1, choices=ADDRESS_CHOICES)
     default = models.BooleanField(default=False)
 

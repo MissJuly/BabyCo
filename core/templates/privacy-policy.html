@@ -1,216 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS files and libraries -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../static/css/privacy-policy.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Privacy Policy | BabyCo</title>
-  </head>
-  <body>
-    <div class="navigation-bar">
-      <nav
-        class="navbar navbar-expand-lg d-flex justify-content-between align-items-center p-3"
-      >
-        <!-- BabyCo logo -->
-        <div class="logo">
-          <a class="navbar-brand" href="#"
-            ><img
-              class="img-fluid"
-              src="../static/images/Logo.svg"
-              alt="babyCo-logo"
-          /></a>
-        </div>
-        <!-- Navbar links -->
-        <div class="nav-links">
-          <ul class="navbar-nav gap-2">
-            <li class="nav-item">
-              <a class="nav-link" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">SHOP</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT US</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">CONTACT US</a>
-            </li>
-          </ul>
-        </div>
-        <div class="navbar">
-          <a class="nav-link d-flex align-items-center gap-1" href="#">
-            <iconify-icon icon="uiw:login"></iconify-icon> LOGIN
-          </a>
-        </div>
-      </nav>
-    </div>
-    <div class="privacy-text px-5 py-5">
-      <p>
-        <span>Privacy Policy for BabyCo</span> <br /><span>
-          Last Updated: [Date]</span
-        ><br /><span>1. Introduction</span> <br />
-        Welcome to BabyCo ("we," "our," or "us"). At BabyCo, we understand the
-        importance of your privacy and are committed to safeguarding your personal
-        information. This Privacy Policy is intended to help you understand how we
-        collect, use, disclose, and protect your personal data, especially in the
-        context of our baby store e-commerce website. <br /></p>
-        <p>
-          <span>2. Information</span
-          ><br />
-          We Collect We may collect various types of information from you, including
-          but not limited to: <br />
-          <ul>
-            <li>
-              <span>Personal Information:</span> This includes your name, email
-              address, mailing address, phone number, and other contact details that
-              you provide when making a purchase or creating an account.
-            </li>
-            <li>
-              <span>Payment Information:</span> When making a purchase, we may
-              collect your credit card or payment information to facilitate
-              transactions securely.
-            </li>
-            <li>
-              <span>Order Information:</span> We gather details about the products
-              or services you order from us, including order history.
-            </li>
-            <li>
-              <span>Usage Information:</span> Information about how you interact
-              with our website, such as your IP address, device type, browser, pages
-              viewed, and actions taken on our site.
-            </li>
-            <li>
-              <span>Communication Information:</span> Correspondence you send to us,
-              including feedback, reviews, surveys, and customer support inquiries.
-            </li>
-          </ul>
-        </p>
+{% extends "shopbase.html" %}
+{% load static %}
 
-        <br />
-        <p>
+{% block head_title %}Privacy Policy{% endblock %}
+{% block css %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/privacy-policy.css' %}"
+/>
+{% endblock %}
+{% block content %}
 
-          <span>3. How We Use Your Information</span>
-          <br />We utilize the information we collect for various purposes,
-          including but not limited to:
-          <br />
-          <ul>
-            <li>
-              Processing your orders and providing excellent customer support.
-            </li>
-            <li>
-              Personalizing your shopping experience to offer you relevant products
-              and recommendations.
-            </li>
-            <li>
-              Keeping you informed about our latest products, promotions, and
-              updates (with your consent).
-            </li>
-            <li>
-              Analyzing user interactions with our website to continually improve
-              our products and services.
-            </li>
-            <li>
-              Protecting against fraud and ensuring the security of your
-              information.
-            </li>
-          </ul>
-        </p>
-        <br>
-        <p>
-          <span>4. Disclosure of Your Information</span> <br />
-          We may share your information under the following circumstances: <br />
-          <ul>
-            <li>
-              <span>Third-party Service Providers:</span> We may share your data
-              with trusted third-party service providers who assist us in managing
-              and improving our website and services.
-            </li>
-            <li>
-              <span>Legal Obligations:</span> We may disclose your information in
-              response to a legal request, court order, or government investigation,
-              or to protect our rights, privacy, safety, or property, or that of
-              others.
-            </li>
-          </ul>
-        </p>
-        <br />
-        <p>
-          <span>5. Your Choices</span> <br />You have several rights regarding your
-          information: <br />
-          <ul>
-            <li>
-              <span>Access:</span> You can request access to the personal
-              information we have about you.
-            </li>
-            <li>
-              <span>Correction:</span> If your personal information is inaccurate or
-              incomplete, you can request corrections.
-            </li>
-            <li>
-              <span>Deletion:</span> You have the right to request the deletion of
-              your personal information
-            </li>
-            <li>
-              <span>Marketing:</span> You can opt out of marketing communications at
-              any time
-            </li>
-          </ul>
-        </p>
-        <br />
-        <p>
-          <span>6. Security</span><br />
-          We take appropriate measures to protect your information from unauthorized
-          access and maintain its accuracy. We use secure encryption and other
-          security measures to ensure the safety of your data. <br />
-        </p>
-        <p>
-          <span>7. Changes to this Privacy Policy</span><br />
-          We may update this Privacy Policy to reflect changes to our information
-          practices. The effective date will be updated accordingly. <br />
-        </p>
-        <p>
-          <span>8. Contact Us</span> <br />
-          If you have any questions or concerns about our Privacy Policy, please do
-          not hesitate to contact us at admin@babyco.com. <br />
-        </p>
-        <p>
-          <span>9. Consent</span> <br />
-          By using our website and services, you consent to the terms and practices
-          outlined in this Privacy Policy. <br />
-          Thank you for entrusting us with your personal information. We are
-          dedicated to ensuring the protection and privacy of your data when you use
-          our baby store e-commerce website.
-        </p>
-    </div>
+<div class="privacy-text px-5 py-5">
+  <h2>Privacy Policy for BabyCo</h2>
+  <br />
+  <span>Last Updated: [Date]</span>
+  <br />
+  <h3>1. Introduction</h3>
+  <p>
+    Welcome to BabyCo ("we," "our," or "us"). At BabyCo, we understand the
+    importance of your privacy and are committed to safeguarding your personal
+    information. This Privacy Policy is intended to help you understand how we
+    collect, use, disclose, and protect your personal data, especially in the
+    context of our baby store e-commerce website.
+  </p>
 
-    <!-- JavaScript libraries -->
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+  <h3>2. Information</h3>
+  <p>
+    We Collect We may collect various types of information from you, including
+    but not limited to:
+  </p>
+  <ul>
+    <li>
+      <h5>Personal Information:</h5> This includes your name, email address,
+      mailing address, phone number, and other contact details that you provide
+      when making a purchase or creating an account.
+    </li>
+    <li>
+      <h5>Payment Information:</h5> When making a purchase, we may collect your
+      credit card or payment information to facilitate transactions securely.
+    </li>
+    <li>
+      <h5>Order Information:</h5> We gather details about the products or
+      services you order from us, including order history.
+    </li>
+    <li>
+      <h5>Usage Information:</h5> Information about how you interact with our
+      website, such as your IP address, device type, browser, pages viewed, and
+      actions taken on our site.
+    </li>
+    <li>
+      <h5>Communication Information:</h5> Correspondence you send to us,
+      including feedback, reviews, surveys, and customer support inquiries.
+    </li>
+  </ul>
+
+  <h3>3. How We Use Your Information</h3>
+  <p>
+    We utilize the information we collect for various purposes, including but
+    not limited to:
+  </p>
+  <ul>
+    <li>Processing your orders and providing excellent customer support.</li>
+    <li>
+      Personalizing your shopping experience to offer you relevant products and
+      recommendations.
+    </li>
+    <li>
+      Keeping you informed about our latest products, promotions, and updates
+      (with your consent).
+    </li>
+    <li>
+      Analyzing user interactions with our website to continually improve our
+      products and services.
+    </li>
+    <li>
+      Protecting against fraud and ensuring the security of your information.
+    </li>
+  </ul>
+
+  <h3>4. Disclosure of Your Information</h3>
+  <p>
+    We may share your information under the following circumstances:
+  </p>
+  <ul>
+    <li>
+      <h5>Third-party Service Providers:</h5> We may share your data with trusted
+      third-party service providers who assist us in managing and improving our
+      website and services.
+    </li>
+    <li>
+      <h5>Legal Obligations:</h5> We may disclose your information in response to
+      a legal request, court order, or government investigation, or to protect
+      our rights, privacy, safety, or property, or that of others.
+    </li>
+  </ul>
+
+  <h3>5. Your Choices</h3>
+  <p>
+    You have several rights regarding your information:
+  </p>
+  <ul>
+    <li>
+      <h5>Access:</h5> You can request access to the personal information we have
+      about you.
+    </li>
+    <li>
+      <h5>Correction:</h5> If your personal information is inaccurate or
+      incomplete, you can request corrections.
+    </li>
+    <li>
+      <h5>Deletion:</h5> You have the right to request the deletion of your
+      personal information.
+    </li>
+    <li>
+      <h5>Marketing:</h5> You can opt out of marketing communications at any time.
+    </li>
+  </ul>
+
+  <h3>6. Security</h3>
+  <p>
+    We take appropriate measures to protect your information from unauthorized
+    access and maintain its accuracy. We use secure encryption and other
+    security measures to ensure the safety of your data.
+  </p>
+
+  <h3>7. Changes to this Privacy Policy</h3>
+  <p>
+    We may update this Privacy Policy to reflect changes to our information
+    practices. The effective date will be updated accordingly.
+  </p>
+
+  <h3>8. Contact Us</h3>
+  <p>
+    If you have any questions or concerns about our Privacy Policy, please do
+    not hesitate to contact us at admin@babyco.com.
+  </p>
+
+  <h3>9. Consent</h3>
+  <p>
+    By using our website and services, you consent to the terms and practices
+    outlined in this Privacy Policy. Thank you for entrusting us with your
+    personal information. We are dedicated to ensuring the protection and
+    privacy of your data when you use our baby store e-commerce website.
+  </p>
+</div>
+{% endblock %}

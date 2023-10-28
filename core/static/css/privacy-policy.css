@@ -23,9 +23,6 @@
   }
 
   .privacy-text p span {
-    color: var(--baby-font) !important;
+    font-weight: 600 !important;
   }
 
- .privacy-text p, li {
-    color: var(--baby-grey) !important;
-  }
