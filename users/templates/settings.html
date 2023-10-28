@@ -1,0 +1,164 @@
+{% extends "shopbase.html" %}
+{% load static %}
+
+{% block head_title %}
+BabyCo | shop - settings
+{% endblock head_title %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/settings.css' %}">
+{% endblock extra_head %}
+
+{% block content %}
+<section class="mt-5 px-3" id="settings">
+{% comment %} message {% endcomment %}
+<div id="approveMessage" class="p-2 mb-2 d-flex gap-4 justify-content-center align-content-center d-none sticky-top rounded small"
+        style="box-shadow: 11px 11px 25px -6px rgba(0,0,0,0.25);
+                -webkit-box-shadow: 11px 11px 25px -6px rgba(0,0,0,0.25);
+                -moz-box-shadow: 11px 11px 25px -6px rgba(0,0,0,0.25); top:20px; width: fit-content;"
+    >
+        <p class=""></p>
+        <i class="close-btn bi bi-x"></i>
+    </div>
+
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-2 mb-4 ">
+
+        <ul class="nav nav-pills d-flex flex-row flex-md-column gap-2 justify-content-center small" id="pills-tab">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-account-tab" data-bs-toggle="pill" data-bs-target="#pills-account" type="button" role="tab" aria-controls="pills-account" aria-selected="false">Account</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-security-tab" data-bs-toggle="pill" data-bs-target="#pills-security" type="button" role="tab" aria-controls="pills-security" aria-selected="true">Security</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-history-tab" data-bs-toggle="pill" data-bs-target="#pills-history" type="button" role="tab" aria-controls="pills-history" aria-selected="true">Order History</a>
+            </li>
+        </ul>
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+        <div class="col-md-10 mb-4">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+                    <div id="intro" class="mb-4">
+                        <p>Account for <code class="">{ {{user.username}} }</code> created on <span class="small text-muted">{{user.date_joined}} (EAT)</span></p>
+
+                        <table>
+                            <tr>
+                                <th>Username<th>
+                                <td>{{user.username}}</td>
+                                <td><a class="btn product-primary disabled" href="">change<a></td>
+                            </tr>
+                            <tr>
+                                <th>Email<th>
+                                <td>{{user.email}}</td>
+                                <td><a href="{% url 'account_email' %}">change<a></td>
+                            </tr>
+                        </table>
+                        <div class="mt-2">
+                            <a class="btn product-primary btn-sm" href="{% url 'account_logout' %}">Logout</a>
+                            <a id="deleteAcc" class="btn product-danger btn-sm">Delete Account</a>
+                        </div>
+                    </div>
+                    <form id="deletePopup" method="post" class="d-none">
+                        {% csrf_token %}
+                        <legend class="border-bottom">Confirmation</legend>
+                        <p style="background: whitesmoke;">
+                        Are you sure you want to delete your account? enter your username <code class="bg-white">{ {{user.username}} }</code> in the box below to continue.</p>
+                        <div class="d-flex">
+                        <a class="btn btn-outline-primary mx-2 btn-sm d-none d-lg-block" id="cancel">Cancel</a>
+                        <input class="rounded-xl" type="text" name="username" required id="confirm" placeholder="Type here">
+                        <button class="btn mx-2 btn-sm d-none d-lg-block" id="delete" type="submit">Yes, Delete</button>
+                        </div>
+                        <div class="mt-2">
+                        <a class="btn btn-sm d-lg-none" id="cancel">Cancel</a>
+                        <button class="btn btn-sm d-lg-none" id="delete" type="submit">Yes, Delete</button>
+                        </div>
+                        <p class="small text-muted text-center mt-5">Please note that deleting your account does not automatically delete all your contributions to BabyCo and subsidiaries. Send a request to Admin to do that</p>
+
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab">
+                    <table>
+                        <tr>
+                            <th class="text-center">Password</th>
+                        </tr>
+                        <tr >
+                            <td class="text-center" title="encrypted"><code>*******</code></td>
+                            <td class="text-center"><a href="{% url 'account_change_password' %}">change</a><td>
+                        <tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="pills-history" role="tabpanel" aria-labelledby="pills-history-tab">
+                    {% if orders %}
+                        <ul class="nav order nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Complete Orders</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Open Orders</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                {% for order in orders_complete %}
+                                {% for item in order.items.all %}
+                                <div class="border border-grey p-2 d-flex justify-content-between">
+                                    <div class="d-flex">
+                                        <img src="{{ item.item.image.url }}" width="104" height="104" alt="{{ item.item }}"></img>
+                                        <span>
+                                            <p class="m-0">{{item.item}}</p>
+                                            <p class="text-muted m-0">Order {{ order.pk }}</p>
+                                            <p class="m-0 badge badge-success">Delivered</p>
+                                            <p  style="font-weight: bold;">On {{ order.ordered_date|date:"d-m-Y" }}</p>
+                                        </span>
+                                    </div>
+                                    <a href="#">See details</a>
+
+                                </div>
+
+                                {% endfor %}
+                                {% endfor %}
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                                {% for order in orders_open %}
+                                {% for item in order.items.all %}
+                                <div class="border border-grey p-2 d-flex justify-content-between">
+                                    <div class="d-flex">
+                                        <img src="{{ item.item.image.url }}" width="104" height="104" alt="{{ item.item }}"></img>
+                                        <span>
+                                            <p class="m-0">{{item.item}}</p>
+                                            <p class="text-muted m-0">Order {{ order.pk }}</p>
+                                            <p class="m-0 badge badge-muted">Payment Unsuccessful</p>
+                                            <p  style="font-weight: bold;">On {{ order.ordered_date|date:"d-m-Y" }}</p>
+                                        </span>
+                                    </div>
+                                    <a href="#">See details</a>
+
+                                </div>
+                                {% empty %}
+                                <div class="border border-grey p-2">
+                                    <p>You do not have orders yet!</p>
+                                    <a class="btn product-danger" href="{% url 'shop:shop' %}">Start shopping</a>
+                                </div>
+                                {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% else %}
+                    <p>You do not have orders yet!</p>
+                    <a class="btn product-danger" href="{% url 'shop:shop' %}">Start shopping</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+

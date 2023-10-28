@@ -85,7 +85,7 @@ class CheckoutView(View):
                 use_default_shipping = form.cleaned_data.get(
                     'use_default_shipping')
                 if use_default_shipping:
-                    print("Using the defualt shipping address")
+                    print("Using the default shipping address")
                     address_qs = Address.objects.filter(
                         user=self.request.user,
                         address_type='S',
