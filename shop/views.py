@@ -374,9 +374,14 @@ class SearchView(ListView):
             queryset = Item.objects.filter(
                 Q(title__icontains=query) | Q(description__icontains=query))
             results = queryset.distinct()
+        else:
+            results = []
+
+        other_products = Item.objects.exclude(id__in=[item.id for item in results])[:4]
         context.update({
             'results': results,
             'query': query,
+            'other_products': other_products,
         })
         return context
 
@@ -392,7 +397,17 @@ class CategoryItemsView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category_name'] = self.kwargs['category_name']
+        category_name = self.kwargs['category_name']
+        items = self.get_queryset()
+        if not items:
+            # If there are no items in the category, fetch a list of other products
+            other_products = Item.objects.exclude(category=category_name)[:4]
+        else:
+            other_products = []
+        context.update({
+            'category_name': category_name,
+            'other_products': other_products,
+        })
         return context
 
 

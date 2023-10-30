@@ -1,8 +1,8 @@
 {% extends "shopbase.html" %}
 {% block head_title %}{{ category_name }}{% endblock %}
 {% block content %}
-    <div class="px-5 mt-3">
-        <h1 class="text-center p-3">{{ category_name }}</h1>
+    <div class="text-center px-5 mt-3">
+        <h1 class="p-3">{{ category_name }}</h1>
         <div class="row wow fadeIn">
             {% for item in items %}
             <div class="col-lg-3 col-md-6 mb-4">
@@ -43,13 +43,58 @@
                   </div>
                 </div>
               </div>
+            </div>
               {% empty %}
               <div class="">
-                  <h5 class="text-center">New Products coming soon!!</h5>
-                  <a href="{% url 'shop:shop' %}" class="btn product-danger">
-                    Continue Shopping
-                  </a>
-            </div>
+                <h4 class="py-3">New Products Coming Soon!!</h4>
+                <a href="{% url 'shop:shop' %}" class="btn product-danger">
+                  Continue Shopping
+                </a>
+                <div class="row wow fadeIn">
+                  <h3 class=" text-center py-5 h3">Check Out our Other Products</h3>
+                {% for item in other_products %}
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4">
+
+                  <div class="card h-100">
+
+                    <div class="view overlay">
+                      <img src="{{ item.image.url }}" class="card-img-top p-3" style="width: 250px; height: 300px;">
+                      <a href="{{ item.get_absolute_url }}">
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+
+
+                    <div class="card-body text-center">
+                      <a href="{%  url 'shop:category_items' item.get_category_display %}" class="grey-text">
+                        <p class="badge product-primary">{{ item.get_category_display }}</p>
+                      </a>
+                      <h5>
+                        <strong>
+                          <a href="{{ item.get_absolute_url }}" class="" style="color: #212738;">{{ item.title }}
+                            <!-- <span class="badge badge-pill {{ item.get_label_display }}-color">NEW</span> -->
+                          </a>
+                        </strong>
+                      </h5>
+
+                      <h4 class="" style="color: #d7c0d0; font-weight: 100;">
+                        <strong>Ksh
+                        {% if item.discount_price %}
+                        {{ item.discount_price }}
+                        {% else %}
+                        {{ item.price }}
+                        {% endif %}
+                        </strong>
+                      </h4>
+
+                    </div>
+                  </div>
+
+                </div>
+                {% endfor %}
+
+              </div>
             {% endfor %}
         </div>
     </div>
