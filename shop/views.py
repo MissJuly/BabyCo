@@ -440,7 +440,6 @@ class ItemDetailView(DetailView):
         for pk in random_pks:
             item = get_object_or_404(Item, pk=pk)
             items.append(item)
-        print(items)
         context.update({
             'items': items
         })
