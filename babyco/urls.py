@@ -10,7 +10,7 @@ urlpatterns = [
     path('', include('core.urls')),
     path('shop/', include('shop.urls')),
     path('shop/users/', include('users.urls')),
-  
+
     #   media url
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
