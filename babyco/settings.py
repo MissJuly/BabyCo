@@ -103,29 +103,28 @@ WSGI_APPLICATION = 'babyco.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # check operating system for appropriate DB
-if os.name == 'posix':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+# if os.name == 'posix':
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    db_from_env = dj_database_url.config(conn_max_age=500)
+}
+# else:
+#     db_from_env = dj_database_url.config(conn_max_age=500)
 
-    DATABASES['default'].update(db_from_env)
+#     DATABASES['default'].update(db_from_env)
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ.get('PGNAME'),
-            'USER': os.environ.get('PGUSER'),
-            'PASSWORD': os.environ.get('PGPASSWORD'),
-            'HOST': os.environ.get('PGHOST'),
-            'PORT': os.environ.get('PGPORT'),
-        }
-    }
-
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': os.environ.get('PGNAME'),
+#             'USER': os.environ.get('PGUSER'),
+#             'PASSWORD': os.environ.get('PGPASSWORD'),
+#             'HOST': os.environ.get('PGHOST'),
+#             'PORT': os.environ.get('PGPORT'),
+#         }
+#     }
 
 
 # Password validation
