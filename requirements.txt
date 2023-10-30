@@ -12,6 +12,7 @@ django-allauth==0.57.0
 django-countries==7.5.1
 django-crispy-forms==2.1
 exceptiongroup==1.1.3
+gunicorn==21.2.0
 idna==3.4
 iniconfig==2.0.0
 oauthlib==3.2.2
