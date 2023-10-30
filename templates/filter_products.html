@@ -2,7 +2,7 @@
 {% block head_title %}{{ category_name }}{% endblock %}
 {% block content %}
     <div class="text-center px-5 mt-3">
-        <h1 class="p-3">{{ category_name }}</h1>
+        <h1 class=" p-3">{{ category_name }}</h1>
         <div class="row wow fadeIn">
             {% for item in items %}
             <div class="col-lg-3 col-md-6 mb-4">
@@ -43,8 +43,8 @@
                   </div>
                 </div>
               </div>
-            </div>
               {% empty %}
+            </div>
               <div class="">
                 <h4 class="py-3">New Products Coming Soon!!</h4>
                 <a href="{% url 'shop:shop' %}" class="btn product-danger">

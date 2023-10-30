@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView
 from shop.models import Item
 
@@ -7,7 +7,7 @@ class LandingPageView(ListView):
     model = Item
     context_object_name = "items"
     paginate_by = 8
-    ordering = ['-pk']
+    ordering = ['pk']
 
 
 class PrivacyPolicyView(TemplateView):
