@@ -10,5 +10,13 @@
       "src": "/(.*)",
       "dest": "babyco/wsgi.py"
     }
-  ]
+  ],
+  "functions": {
+    "migrate": {
+      "handler": "manage.py"
+    },
+    "collectstatic": {
+      "handler": "manage.py",
+    }
+  }
 }
