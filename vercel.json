@@ -3,20 +3,23 @@
     {
       "src": "babyco/wsgi.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles"
+      }
     }
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "babyco/wsgi.py"
     }
-  ],
-  "functions": {
-    "migrate": {
-      "handler": "manage.py"
-    },
-    "collectstatic": {
-      "handler": "manage.py"
-    }
-  }
+  ]
 }
