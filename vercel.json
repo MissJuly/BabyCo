@@ -16,7 +16,7 @@
       "handler": "manage.py"
     },
     "collectstatic": {
-      "handler": "manage.py",
+      "handler": "manage.py"
     }
   }
 }
