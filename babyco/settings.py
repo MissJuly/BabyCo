@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'babyco.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # check operating system for appropriate DB
-if os.name == 'posix':
+if os.name == 'posix' and os.getenv('DEVELOPMENT'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
