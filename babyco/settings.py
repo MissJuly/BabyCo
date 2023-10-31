@@ -104,27 +104,16 @@ WSGI_APPLICATION = 'babyco.wsgi.application'
 
 # check operating system for appropriate DB
 # if os.name == 'posix':
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-# else:
-#     db_from_env = dj_database_url.config(conn_max_age=500)
-
-#     DATABASES['default'].update(db_from_env)
-
 #     DATABASES = {
 #         'default': {
-#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#             'NAME': os.environ.get('PGNAME'),
-#             'USER': os.environ.get('PGUSER'),
-#             'PASSWORD': os.environ.get('PGPASSWORD'),
-#             'HOST': os.environ.get('PGHOST'),
-#             'PORT': os.environ.get('PGPORT'),
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
 #         }
 #     }
+# else:
+DATABASES = {
+        'default': dj_database_url.config(default=os.environ.get('PG_URL'))
+    }
 
 
 # Password validation
