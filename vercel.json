@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "babyco/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "babyco/wsgi.py"
+    }
+  ]
+}
