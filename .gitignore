@@ -167,5 +167,6 @@ cython_debug/
 #.idea/
 .dump
 .filter
+whole.json
 
 .vercel
