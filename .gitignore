@@ -1,5 +1,8 @@
 # django static
 /staticfiles
+/media_root
+node_modules
+whole.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -166,3 +169,4 @@ cython_debug/
 .filter
 whole.json
 
+.vercel

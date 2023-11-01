@@ -27,11 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://c965-102-68-77-46.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['*']
 
 
 # Application definition
@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'babyco.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # check operating system for appropriate DB
-if os.name == 'posix':
+if os.name == 'posix' and os.getenv('DEVELOPMENT'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -111,21 +111,9 @@ if os.name == 'posix':
         }
     }
 else:
-    db_from_env = dj_database_url.config(conn_max_age=500)
-
-    DATABASES['default'].update(db_from_env)
-
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.environ.get('PGNAME'),
-            'USER': os.environ.get('PGUSER'),
-            'PASSWORD': os.environ.get('PGPASSWORD'),
-            'HOST': os.environ.get('PGHOST'),
-            'PORT': os.environ.get('PGPORT'),
-        }
+        'default': dj_database_url.config(default=os.environ.get('PG_URL'))
     }
-
 
 
 # Password validation
