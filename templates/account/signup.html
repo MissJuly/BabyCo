@@ -7,7 +7,7 @@
 {% block content %}
   <main>
     <div class="container">
-      <section class="mb-4">
+      <section class="mb-4 pt-5">
         <div class="row wow fadeIn">
           <div class='col-6 offset-3'>
             <h1>{% trans "Sign Up" %}</h1>
@@ -18,7 +18,7 @@
               {% if redirect_field_value %}
               <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
               {% endif %}
-              <button class='btn btn-primary' type="submit">{% trans "Sign Up" %} &raquo;</button>
+              <button class='btn product-primary' type="submit">{% trans "Sign Up" %} &raquo;</button>
             </form>
           </div>
         </div>

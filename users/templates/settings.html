@@ -114,11 +114,15 @@ BabyCo | shop - settings
                                         <span>
                                             <p class="m-0">{{item.item}}</p>
                                             <p class="text-muted m-0">Order {{ order.pk }}</p>
-                                            <p class="m-0 badge badge-success">Delivered</p>
+                                            <p><strong>Delivery Status:</strong> {%  if order.being_delivered %}
+                                                <p class="m-0 badge badge-success">Delivered</p>
+                                                {% else %}
+                                                <p class="m-0 badge badge-info">Waiting for Delivery</p>
+                                                {% endif %}</p>
                                             <p  style="font-weight: bold;">On {{ order.ordered_date|date:"d-m-Y" }}</p>
                                         </span>
                                     </div>
-                                    <a href="#">See details</a>
+                                    <a href="{% url 'order_details' order.id %}">See details</a>
 
                                 </div>
 
@@ -134,11 +138,11 @@ BabyCo | shop - settings
                                         <span>
                                             <p class="m-0">{{item.item}}</p>
                                             <p class="text-muted m-0">Order {{ order.pk }}</p>
-                                            <p class="m-0 badge badge-muted">Payment Unsuccessful</p>
+                                            <p class="m-0 badge badge-warning">Pending</p>
                                             <p  style="font-weight: bold;">On {{ order.ordered_date|date:"d-m-Y" }}</p>
                                         </span>
                                     </div>
-                                    <a href="#">See details</a>
+                                    <a href="{% url 'order_details' order.id %}">See details</a>
 
                                 </div>
                                 {% empty %}
