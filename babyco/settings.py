@@ -31,6 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
+
 CSRF_TRUSTED_ORIGINS = ['https://vercel.com']
 
 
@@ -102,10 +103,10 @@ WSGI_APPLICATION = 'babyco.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('PG_URL'))
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
