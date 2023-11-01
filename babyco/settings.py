@@ -29,9 +29,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
-CSRF_TRUSTED_ORIGINS = ['*']
+
+CSRF_TRUSTED_ORIGINS = ['https://vercel.com']
 
 
 # Application definition
@@ -102,19 +103,10 @@ WSGI_APPLICATION = 'babyco.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# check operating system for appropriate DB
-if os.name == 'posix' and os.getenv('DEVELOPMENT'):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.config(default=os.environ.get('PG_URL'))
-    }
 
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('PG_URL'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -155,9 +147,9 @@ STATIC_URL = 'static/'
 # Path to the folder that holds static files
 MEDIA_URL = '/media/'
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
