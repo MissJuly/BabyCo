@@ -2,16 +2,13 @@ from typing import Any
 from django.db.models.query import QuerySet
 from users.models import UserProfile
 from shop.models import Order
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views import View
 from django.views.generic import TemplateView
-from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404, render
 from django.http import JsonResponse
 import json
 
 
-class SettingsView(LoginRequiredMixin, TemplateView):
+class SettingsView(TemplateView):
     template_name = 'settings.html'
 
     def get_context_data(self, **kwargs: Any):
@@ -64,20 +61,3 @@ class SettingsView(LoginRequiredMixin, TemplateView):
         else:
             pass
         return render(request, "users/settings.html", {'message': message})
-
-
-class OrderDetailsView(LoginRequiredMixin, DetailView):
-    model = Order
-    template_name = 'order_details.html'
-    context_object_name = 'order'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # Calculate the total amount and pass it to the context
-        total_amount = 0
-        for order_item in context['order'].items.all():
-            total_amount += order_item.get_total_item_price()
-
-        context['total_amount'] = total_amount
-        return context
