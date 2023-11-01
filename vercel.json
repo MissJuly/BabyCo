@@ -2,7 +2,13 @@
   "builds": [
     {
       "src": "babyco/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "staticfiles" }
     }
   ],
   "routes": [
@@ -14,5 +20,6 @@
       "src": "/(.*)",
       "dest": "babyco/wsgi.py"
     }
-  ]
+  ],
+  "outputDirectory": "staticfiles"
 }

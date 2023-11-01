@@ -1,6 +1,6 @@
 # django static
-/staticfiles
-/media_root
+# /staticfiles
+# /media_root
 node_modules
 whole.json
 
