@@ -2,6 +2,8 @@
 
 ![BabyCo Logo](/babyco-logo.svg)
 
+![Django tests](https://github.com/MissJuly/BabyCo/actions/workflows/django.yml/badge.svg)
+
 BabyCo is an eCommerce platform dedicated to providing high-quality baby products and essentials for parents and caregivers. From clothing and toys to feeding and nursery items, we've got you covered throughout your parenting journey.
 
 ## Table of Contents
